@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta name="author" content="Nihit Bansal">
+
+    <title>Phone Directory</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <!-- Nav-Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-brand mx-auto">Phone Directory</span>
+    </nav>
+
+    <!-- Input Form -->
+    <div class="container mt-5">
+        <div id="add-subscriber">
+            <div class="row mb-3">
+                <button class="btn btn-light" onclick="toggleListAndForm(false)">Back</button>
+            </div>
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input
+                                id="name"
+                                type="text"
+                                class="form-control"
+                                aria-describedby="name"
+                                placeholder="Enter Name"
+                                onchange="onNameChanged()"
+                                onkeypress="onNameChanged()"
+                                onpaste="onNameChanged()"
+                                oninput="onNameChanged()"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input
+                                id="phone"
+                                type="tel"
+                                class="form-control"
+                                aria-describedby="phone"
+                                placeholder="Enter Phone"
+                                onchange="onPhoneChanged()"
+                                onkeypress="onPhoneChanged()"
+                                oninput="onPhoneChanged()"
+                                onpaste="onPhoneChanged()"
+                        >
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h6>Subscriber to be added</h6>
+                <span id="name-text">Name: </span> <br>
+                <span id="phone-text">Phone: </span>
+            </div>
+        </div>
+
+        <!-- Add Subscriber Button -->
+        <div class="row mt-3">
+            <button class="btn btn-success" onclick="addUser()">Add</button>
+        </div>
+
+        <!-- Subscriber List Table -->
+        <div id="subscriber-list">
+            <table id="subsciber-table" class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script rel="script" type="text/javascript" src="index.js"></script>
+</body>
+</html>
